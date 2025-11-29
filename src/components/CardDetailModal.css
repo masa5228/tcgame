@@ -150,19 +150,39 @@
   color: #3d5a5c;
 }
 
-.stats-grid {
+.skills-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.stat-badge {
-  background-color: #5a7c5a;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
+.skill-item {
+  background-color: #f7f5f2;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #5a7c5a;
+}
+
+.skill-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #5a7c5a;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.skill-description {
+  color: #5e6c69;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.no-skill {
+  color: #9caf88;
+  font-style: italic;
+  padding: 1rem;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

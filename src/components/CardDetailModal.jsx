@@ -56,11 +56,29 @@ const CardDetailModal = ({ card, onClose }) => {
               )}
             </div>
             <div className="card-stats">
-              <h3>カードステータス</h3>
-              <div className="stats-grid">
-                {card.TEMPO === '1' && <span className="stat-badge">TEMPO</span>}
-                {card.CHARGE === '1' && <span className="stat-badge">CHARGE</span>}
-                {card.MACHO === '1' && <span className="stat-badge">MACHO</span>}
+              <h3>スキル</h3>
+              <div className="skills-list">
+                {card.TEMPO === '1' && (
+                  <div className="skill-item">
+                    <div className="skill-name">Tempo</div>
+                    <div className="skill-description">手札を1枚山札の一番下に置き、カードを一枚引く</div>
+                  </div>
+                )}
+                {card.CHARGE === '1' && (
+                  <div className="skill-item">
+                    <div className="skill-name">Charge</div>
+                    <div className="skill-description">捨て札のカードを1枚手札に加える</div>
+                  </div>
+                )}
+                {card.MACHO === '1' && (
+                  <div className="skill-item">
+                    <div className="skill-name">Macho</div>
+                    <div className="skill-description">このターンのパワー合計値＋３</div>
+                  </div>
+                )}
+                {!card.TEMPO && !card.CHARGE && !card.MACHO && (
+                  <div className="no-skill">スキルなし</div>
+                )}
               </div>
             </div>
           </div>
