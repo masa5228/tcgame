@@ -1,0 +1,108 @@
+.hero-section {
+  width: 100%;
+  min-height: 600px;
+  position: relative;
+}
+
+.hero-background {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.4)
+  );
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  width: 90%;
+  max-width: 800px;
+}
+
+.game-title {
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.1em;
+  font-family: 'Brush Script MT', cursive, sans-serif;
+}
+
+.game-title-logo {
+  max-width: 500px;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.5));
+}
+
+.game-subtitle {
+  font-size: 2.5rem;
+  margin: 0.5rem 0 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+}
+
+.catchphrase {
+  font-size: 1.9rem;
+  line-height: 1.8;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 1);
+  font-weight: 300;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-background {
+    height: 500px;
+  }
+
+  .game-title {
+    font-size: 3rem;
+  }
+
+  .game-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .catchphrase {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-background {
+    height: 400px;
+  }
+
+  .game-title {
+    font-size: 2.5rem;
+  }
+
+  .game-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .catchphrase {
+    font-size: 0.9rem;
+  }
+}

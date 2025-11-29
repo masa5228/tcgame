@@ -1,0 +1,187 @@
+.story-page {
+  min-height: 100vh;
+  background-color: #f7f5f2;
+}
+
+/* ヒーローセクション */
+.story-hero {
+  background: linear-gradient(135deg, rgba(90, 124, 90, 0.85), rgba(74, 107, 74, 0.85)),
+              url('/assets/images/hero-forest.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.story-hero-content h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.story-hero-content p {
+  font-size: 1.3rem;
+  margin: 0;
+  opacity: 0.95;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* メインコンテンツ */
+.story-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.story-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.story-intro h2 {
+  font-size: 2rem;
+  color: #3d5a5c;
+  margin: 0 0 1.5rem 0;
+  font-weight: 600;
+}
+
+.story-intro p {
+  color: #5e6c69;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0 0 1rem 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.story-intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* 統計情報 */
+.story-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.story-stat-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-stat-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.story-stat-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #5a7c5a;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.story-stat-label {
+  font-size: 1.1rem;
+  color: #5e6c69;
+  font-weight: 500;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .story-hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .story-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .story-hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .story-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .story-intro {
+    padding: 1.5rem;
+  }
+
+  .story-intro h2 {
+    font-size: 1.75rem;
+  }
+
+  .story-intro p {
+    font-size: 1rem;
+  }
+
+  .story-stats {
+    gap: 1.5rem;
+  }
+
+  .story-stat-number {
+    font-size: 3rem;
+  }
+
+  .story-stat-label {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-hero {
+    padding: 3rem 1rem;
+  }
+
+  .story-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .story-hero-content p {
+    font-size: 1rem;
+  }
+
+  .story-container {
+    padding: 2rem 1rem;
+  }
+
+  .story-intro {
+    padding: 1rem;
+  }
+
+  .story-intro h2 {
+    font-size: 1.5rem;
+  }
+
+  .story-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .story-stat-item {
+    padding: 1.5rem;
+  }
+
+  .story-stat-number {
+    font-size: 2.5rem;
+  }
+}

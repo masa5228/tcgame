@@ -1,0 +1,260 @@
+.rules-page {
+  min-height: 100vh;
+  background-color: #e8ede9;
+}
+
+/* ヒーローセクション */
+.rules-hero {
+  background: linear-gradient(135deg, rgba(90, 124, 90, 0.85), rgba(74, 107, 74, 0.85)),
+              url('/assets/images/hero-forest.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.rules-hero-content h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.rules-hero-content p {
+  font-size: 1.3rem;
+  margin: 0;
+  opacity: 0.95;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* メインコンテンツ */
+.rules-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.rules-content-wrapper {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+}
+
+.rules-sidebar {
+  min-width: 280px;
+}
+
+.rules-content {
+  min-width: 0;
+}
+
+/* インフォカードグリッド */
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* フローステップ */
+.flow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.flow-step {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flow-step:hover {
+  transform: translateX(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.flow-step-number {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #5a7c5a, #4a6b4a);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.flow-step-content h4 {
+  font-size: 1.2rem;
+  color: #3d5a5c;
+  margin: 0 0 0.5rem 0;
+}
+
+.flow-step-content p {
+  color: #5e6c69;
+  margin: 0.25rem 0;
+}
+
+/* コンボタイプ */
+.combo-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.combo-type-card {
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #5a7c5a;
+}
+
+.combo-type-card h4 {
+  font-size: 1.3rem;
+  color: #3d5a5c;
+  margin: 0 0 1rem 0;
+}
+
+.combo-type-card p {
+  color: #5e6c69;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* サマリーカード */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.summary-card {
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.summary-card h4 {
+  font-size: 1.2rem;
+  color: #3d5a5c;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e8ede9;
+}
+
+.summary-card p {
+  color: #5e6c69;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* レスポンシブ */
+@media (max-width: 1024px) {
+  .rules-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .rules-sidebar {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .rules-hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .rules-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .rules-hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .rules-main {
+    padding: 2rem 1.5rem;
+  }
+
+  .rules-content-wrapper {
+    gap: 2rem;
+  }
+
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-step {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .flow-step-number {
+    margin: 0 auto;
+  }
+
+  .combo-types {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .rules-hero {
+    padding: 3rem 1rem;
+  }
+
+  .rules-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .rules-hero-content p {
+    font-size: 1rem;
+  }
+
+  .rules-main {
+    padding: 1.5rem 1rem;
+  }
+
+  .flow-step {
+    padding: 1rem;
+  }
+
+  .flow-step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .combo-type-card,
+  .summary-card {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,132 @@
+/* スカンジナビア風デザインのグローバルスタイル */
+
+/* リセットとベーススタイル */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* カラーパレット - スカンジナビア風 */
+  --color-forest-green: #5a7c5a;
+  --color-forest-dark: #4a6b4a;
+  --color-stone-gray: #3d5a5c;
+  --color-mist: #e8ede9;
+  --color-wood: #a88b6f;
+  --color-snow: #f7f5f2;
+  --color-sand: #ddd5cc;
+  --color-sage: #9caf88;
+  --color-text: #2f3e3b;
+  --color-text-light: #5e6c69;
+
+  /* スペーシング */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* フォント */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-handwritten: 'Brush Script MT', 'Comic Sans MS', cursive, sans-serif;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  background-color: var(--color-snow);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* タイポグラフィ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-stone-gray);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* リンク */
+a {
+  color: var(--color-forest-green);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-forest-dark);
+}
+
+/* ボタン */
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* イメージ */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* スクロールバーのスタイリング（Webkit） */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-mist);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-forest-green);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-forest-dark);
+}
+
+/* セレクション */
+::selection {
+  background-color: var(--color-forest-green);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--color-forest-green);
+  color: white;
+}
