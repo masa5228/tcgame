@@ -33,7 +33,7 @@ const CardDetailModal = ({ card, onClose }) => {
                 <span className="info-value">{card.POWER}</span>
               </div>
               <div className="info-item">
-                <span className="info-label">BREAK:</span>
+                <span className="info-label">ブレイク:</span>
                 <span className="info-value">{card.BREAK}</span>
               </div>
               {card.COLOR_1 && (

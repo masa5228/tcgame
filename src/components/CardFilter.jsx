@@ -116,7 +116,7 @@ const CardFilter = ({ filters, onFilterChange, rarities, colors, powers, breaks,
         </div>
 
         <div className="filter-group">
-          <label htmlFor="break">BREAK</label>
+          <label htmlFor="break">ブレイク</label>
           <select
             id="break"
             value={filters.break}
