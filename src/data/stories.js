@@ -8,8 +8,8 @@ export const stories = [
     excerpt: 'ある日、二人の騎士が王を探す旅に出た。しかし、彼らは探し物のことを何も知らなかった。',
     tags: ['騎士', '冒険', '成長'],
     author: 'T!C!Game 制作チーム',
-    thumbnail: null, // 画像パスを指定
-    illustration: null, // 挿絵パスを指定
+    thumbnail: 'assets\\images\\stories\\Knight.png', // 画像パスを指定
+    illustration: 'assets\\images\\stories\\Knight.png', // 挿絵パスを指定
     content: `騎士とは王の命令に従う者たちのことである。
 騎士とはそういうものである。
 しかし「王とは何か」彼らは知らなかった。
