@@ -36,8 +36,8 @@ export const stories = [
     excerpt: 'ネズミの子が大好きなチーズを探して奔走する。ネズミママとパパも一緒に。家族の絆の物語。',
     tags: ['家族', 'ユーモア', '絆'],
     author: 'T!C!Game 制作チーム',
-    thumbnail: null,
-    illustration: null,
+    thumbnail: 'assets\\images\\stories\\Rats.png',
+    illustration: 'assets\\images\\stories\\Rats.png',
     content: `「チーズがない！」ネズミの子が叫んだ。
 
 朝起きたら、昨日の夜に大切にとっておいたチーズがなくなっていたのだ。ネズミママとネズミパパも一緒に探し始めた。
