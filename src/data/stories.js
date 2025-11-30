@@ -86,8 +86,8 @@ export const stories = [
     excerpt: 'ボディビルダーとレスラーは筋肉で世界を幸せにしたい',
     tags: ['筋肉', '哲学', '成長'],
     author: 'T!C!Game 制作チーム',
-    thumbnail: 'assets/images/stories/builder.png',
-    illustration: 'assets/images/stories/builder.png',
+    thumbnail: 'assets\\images\\stories\\Builder.png',
+    illustration: 'assets\\images\\stories\\Builder.png',
     content: `「旅のお方、ドラゴンを見ませんでしたか？」
     筋骨隆々の二人組が旅人に訪ねる。
 異邦人は突然声をかけられたことに驚いたが、ドラゴンがいることにも驚いた。
