@@ -115,7 +115,7 @@ const RulesPage = () => {
             </RuleSection>
 
             {/* コンポーネント */}
-            <RuleSection id="components" title="コンポーネント" imagePlaceholder hasImage ={true} imageUrl={"/assets/images/component.png"}>
+            <RuleSection id="components" title="コンポーネント" imagePlaceholder hasImage ={true} imageUrl={"/assets/images/compornent.png"}>
               <ul>
                 <li>キングトークン：13枚</li>
                 <li>通貨用チップ</li>
