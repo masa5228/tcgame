@@ -149,6 +149,15 @@
   .rules-nav {
     margin-bottom: 2rem;
   }
+
+  /* 閉じた状態の目次をフロート表示 */
+  .rules-nav.collapsed {
+    position: fixed;
+    left: 1rem;
+    top: 100px;
+    z-index: 100;
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -162,6 +171,21 @@
 
   .rules-nav-link {
     padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  /* スマホサイズでも閉じた状態はフロート */
+  .rules-nav.collapsed {
+    position: fixed;
+    left: 0.5rem;
+    top: 80px;
+    width: 50px;
+    padding: 0.75rem;
+  }
+
+  .rules-nav.collapsed .rules-nav-toggle {
+    width: 28px;
+    height: 28px;
     font-size: 0.9rem;
   }
 }
