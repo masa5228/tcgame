@@ -292,6 +292,7 @@ const RulesPage = () => {
             <RuleSection id="shop" title="ショップ" >
               <p>1ラウンドにつき購入できるカードは最大3枚です。</p>
               <p>どのレアリティのサプライからカードを購入するかで支払うチップが異なります。</p>
+              <p>例：ゴールド1枚、レア2枚を購入する場合は 14+4+4=22枚のチップを払います。</p>
 
               <TableSection
                 headers={shopTableHeaders}
