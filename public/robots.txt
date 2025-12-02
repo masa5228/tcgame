@@ -1,0 +1,14 @@
+# T!C!Game (トカゲー) - robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private directories (if any in the future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://tcgame.example.com/sitemap.xml
+
+# Crawl-delay (optional, adjust if needed)
+# Crawl-delay: 1

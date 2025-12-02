@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ホームページ -->
+  <url>
+    <loc>https://tcgame.example.com/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tcgame.example.com/" />
+  </url>
+
+  <!-- カード一覧ページ -->
+  <url>
+    <loc>https://tcgame.example.com/#cards</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tcgame.example.com/#cards" />
+  </url>
+
+  <!-- ルールページ (コメントアウト - 将来有効化) -->
+  <!--
+  <url>
+    <loc>https://tcgame.example.com/#rules</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tcgame.example.com/#rules" />
+  </url>
+  -->
+
+  <!-- ストーリーページ (コメントアウト - 将来有効化) -->
+  <!--
+  <url>
+    <loc>https://tcgame.example.com/#story</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tcgame.example.com/#story" />
+  </url>
+  -->
+
+</urlset>

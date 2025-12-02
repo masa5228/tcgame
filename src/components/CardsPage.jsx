@@ -3,6 +3,7 @@ import CardFilter from './CardFilter';
 import CardGrid from './CardGrid';
 import Pagination from './Pagination';
 import CardDetailModal from './CardDetailModal';
+import SEO from './SEO';
 import { parseCSV, getUniqueValues, filterCards, getSkillOptions } from '../utils/csvParser';
 import './CardsPage.css';
 
@@ -113,7 +114,14 @@ const CardsPage = () => {
   }
 
   return (
-    <div className="cards-page">
+    <>
+      <SEO
+        title="カード一覧"
+        description="T!C!Game（トカゲー）の全カード一覧。スターター、ノーマル、レア、ゴールド、レジェンドまで全206種類のカードを収録。パワー、色、ブレイク、スキルで絞り込み検索が可能。"
+        keywords="トカゲー カード, TCGame カード一覧, デッキ構築 カード, スキル, パワー, レアリティ"
+        canonical="https://tcgame.example.com/#cards"
+      />
+      <div className="cards-page">
       <div className="cards-hero">
         <h1>カード一覧</h1>
         <p>全 {allCards.length} 種類のカードから {filteredCards.length} 件を表示</p>
@@ -144,6 +152,7 @@ const CardsPage = () => {
         <CardDetailModal card={selectedCard} onClose={handleCloseModal} />
       )}
     </div>
+    </>
   );
 };
 
