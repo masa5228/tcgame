@@ -1,7 +1,15 @@
 import React from 'react';
 import './RuleSection.css';
 
-const RuleSection = ({ id, title, children, hasImage = false, imagePlaceholder = false }) => {
+const RuleSection = ({
+  id,
+  title,
+  children,
+  hasImage = false,
+  imagePlaceholder = false,
+  imageUrl = null,
+  imageAlt = ''
+}) => {
   return (
     <section id={id} className="rule-section">
       <div className="rule-section-container">
@@ -10,11 +18,19 @@ const RuleSection = ({ id, title, children, hasImage = false, imagePlaceholder =
           <div className="rule-section-text">
             {children}
           </div>
-          {imagePlaceholder && (
+          {(imagePlaceholder || imageUrl) && (
             <div className="rule-section-image">
-              <div className="image-placeholder">
-                <span>画像エリア</span>
-              </div>
+              {imageUrl ? (
+                <img
+                  src={imageUrl}
+                  alt={imageAlt || title}
+                  className="rule-image"
+                />
+              ) : (
+                <div className="image-placeholder">
+                  <span>画像エリア</span>
+                </div>
+              )}
             </div>
           )}
         </div>

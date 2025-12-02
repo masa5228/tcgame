@@ -16,8 +16,8 @@ function App() {
       const hash = window.location.hash.slice(1); // # を除去
       if (hash === 'cards' || hash === 'world') {
         setCurrentPage('cards');
-      // } else if (hash === 'rules') {
-      //   setCurrentPage('rules');
+      } else if (hash === 'rules') {
+        setCurrentPage('rules');
       // } else if (hash === 'story') {
       //   setCurrentPage('story');
       } else {
@@ -38,8 +38,8 @@ function App() {
     switch (currentPage) {
       case 'cards':
         return <CardsPage />;
-      // case 'rules':
-      //   return <RulesPage />;
+      case 'rules':
+        return <RulesPage />;
       // case 'story':
       //   return <StoryPage />;
       case 'home':
