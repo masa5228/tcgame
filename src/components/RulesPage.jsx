@@ -44,7 +44,7 @@ const RulesPage = () => {
     ['ノーマル', 'チップ0枚', '1～7', '65枚／キング6枚'],
     ['レア', 'チップ4枚', '5～10', '50枚／キング6枚'],
     ['ゴールド', 'チップ14枚', '7～12', '39枚／キング6枚'],
-    ['レジェンド', 'チップ35枚', '11～15', '16枚／キング6枚'],
+    ['レジェンド', 'チップ30枚', '11～15', '16枚／キング6枚'],
   ];
 
   return (
@@ -166,11 +166,11 @@ const RulesPage = () => {
                 {/* <p><strong>全デッキ共通：</strong>柴犬、少女、ネズミの子、わんぱく坊主</p> */}
                 <ul>
                   <li><strong>騎士デッキ：</strong>入門赤デッキ</li>
-                  <li><strong>マッスルデッキ：</strong>パワー重視</li>
-                  <li><strong>黒魔術デッキ：</strong>基本紫デッキ</li>
-                  <li><strong>ネズミデッキ：</strong>基本黄デッキ</li>
-                  <li><strong>家族デッキ：</strong>パワーコンボ重視</li>
-                  <li><strong>犬デッキ：</strong>オールラウンド</li>
+                  <li><strong>マッスルデッキ：</strong>パワー型緑デッキ</li>
+                  <li><strong>黒魔術デッキ：</strong>入門紫デッキ</li>
+                  <li><strong>ネズミデッキ：</strong>入門黄デッキ</li>
+                  <li><strong>家族デッキ：</strong>パワーコンボ白デッキ</li>
+                  <li><strong>犬デッキ：</strong>オールラウンド青デッキ</li>
                 </ul>
               </HighlightBox>
             </RuleSection>
