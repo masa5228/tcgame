@@ -13,19 +13,17 @@ const RulesPage = () => {
     setIsNavCollapsed(!isNavCollapsed);
   };
   const sections = [
-    { id: 'introduction', title: 'はじめに' },
     { id: 'basic-info', title: 'ゲームの基本情報' },
+    { id: 'introduction', title: 'ゲームの流れ' },
     { id: 'components', title: 'コンポーネント' },
     { id: 'card-status', title: 'カードのステータス' },
     { id: 'preparation', title: 'ゲームの準備' },
     { id: 'round-flow', title: 'ラウンドの流れ' },
     { id: 'battle-rules', title: '対戦ルール' },
     { id: 'combo', title: 'コンボ' },
-    { id: 'chips', title: 'チップ' },
     { id: 'rewards', title: '対戦報酬' },
     { id: 'shop', title: 'ショップ' },
     { id: 'king-match', title: 'キングマッチ' },
-    { id: 'summary', title: 'まとめ' },
   ];
 
   const rewardTableHeaders = ['デッキ枚数', '勝利時', '敗北時'];
