@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import RuleSection from './rules/RuleSection';
 import InfoCard from './rules/InfoCard';
 import TableSection from './rules/TableSection';
@@ -7,6 +7,11 @@ import RulesNav from './rules/RulesNav';
 import './RulesPage.css';
 
 const RulesPage = () => {
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
+  const toggleNav = () => {
+    setIsNavCollapsed(!isNavCollapsed);
+  };
   const sections = [
     { id: 'introduction', title: 'はじめに' },
     { id: 'basic-info', title: 'ゲームの基本情報' },
@@ -54,10 +59,14 @@ const RulesPage = () => {
 
       {/* メインコンテンツ */}
       <div className="rules-main">
-        <div className="rules-content-wrapper">
+        <div className={`rules-content-wrapper ${isNavCollapsed ? 'nav-collapsed' : ''}`}>
           {/* サイドナビゲーション */}
           <aside className="rules-sidebar">
-            <RulesNav sections={sections} />
+            <RulesNav
+              sections={sections}
+              isCollapsed={isNavCollapsed}
+              onToggle={toggleNav}
+            />
           </aside>
 
           {/* メインコンテンツ */}
@@ -89,7 +98,7 @@ const RulesPage = () => {
             </RuleSection>
 
             {/* ゲームの基本 */}
-            <RuleSection id="introduction" title="ゲームの流れ" imagePlaceholder hasImage ={true} imageUrl={"dist\\assets\\images\\game_cycle.png"}>
+            <RuleSection id="introduction" title="ゲームの流れ" imagePlaceholder hasImage ={true} imageUrl={"/assets/images/game_cycle.png"}>
               <p>
                 カードを集め、デッキを構築し、コンボを駆使して戦うカードゲームです。
               </p>
@@ -106,7 +115,7 @@ const RulesPage = () => {
             </RuleSection>
 
             {/* コンポーネント */}
-            <RuleSection id="components" title="コンポーネント" imagePlaceholder hasImage ={true} imageUrl={"dist\\assets\\images\\compornent.png"}>
+            <RuleSection id="components" title="コンポーネント" imagePlaceholder hasImage ={true} imageUrl={"/assets/images/component.png"}>
               <ul>
                 <li>キングトークン：13枚</li>
                 <li>通貨用チップ</li>
@@ -119,7 +128,7 @@ const RulesPage = () => {
             </RuleSection>
 
             {/* カードのステータス */}
-            <RuleSection id="card-status" title="カードのステータス" imagePlaceholder hasImage ={true} imageUrl={"dist\\assets\\images\\card_status.png"}>
+            <RuleSection id="card-status" title="カードのステータス" imagePlaceholder hasImage ={true} imageUrl={"/assets/images/card_status.png"}>
               <p>各カードは以下の要素を持ちます。</p>
               <ul>
                 <li><strong>パワー：</strong>
@@ -144,7 +153,7 @@ const RulesPage = () => {
             </RuleSection>
 
             {/* ゲームの準備 */}
-            <RuleSection id="preparation" title="ゲームの準備" imagePlaceholder hasImage ={true} imageUrl={"dist\\assets\\images\\starterdecks.png"}>
+            <RuleSection id="preparation" title="ゲームの準備" imagePlaceholder hasImage ={true} imageUrl={"/assets/images/starterdecks.png"}>
               <ol>
                 <li>各プレイヤーはスターターカード6枚で構成された初期デッキを1つ選びます。</li>
                 <li>各プレイヤーはさらにノーマルカードをランダムに3枚受け取ります。</li>
@@ -208,7 +217,7 @@ const RulesPage = () => {
             </RuleSection>
 
             {/* 対戦ルール */}
-            <RuleSection id="battle-rules" title="対戦ルール"  imagePlaceholder hasImage ={true} imageUrl={"dist\\assets\\images\\battle_field.png"}>
+            <RuleSection id="battle-rules" title="対戦ルール" hasImage imageUrl="/assets/images/battle_field.png">
               <HighlightBox type="important" title="勝利条件">
                 <p>先に自分のデッキが0枚になったプレイヤーが対戦に勝利します。</p>
               </HighlightBox>
@@ -216,9 +225,10 @@ const RulesPage = () => {
               <h3>ターンの流れ</h3>
               <ol>
                 <li>手札が3枚になるようにデッキからカードを引きます。</li>
-                <li>先手プレイヤーから順にコンボの規則に従ってカードを出します。
+                <li>先手プレイヤーから順にコンボの規則に従ってカードをコンボエリアへ出します。
                   出せない場合はパスします。</li>
                 <li>両者が出せなくなった時点でコンボの勝敗判定を行います。</li>
+                <li>コンボエリアのカードを捨て札へ。</li>
                 <li>次のターンへ</li>
               </ol>
 
@@ -228,17 +238,15 @@ const RulesPage = () => {
                 <li>コンボ数が同じ場合は、合計パワーを比較し、大きい方が勝利します。</li>
                 <li>コンボ数も合計パワーも同じ場合は引き分けとします。</li>
                 <li>引き分けは両方が敗者となります。</li>
-                <li>勝者が次のターンの先手です。引き分け時は先手は変わりません。</li>
+                <li>勝者が次のターンの先手です。引き分け時は先手が変わりません。</li>
               </ol>
 
               <h3>コンボに勝利時の処理</h3>
-              <p>勝者は、自分の場のカードの最大のブレイクの値だけデッキからカードを捨て札にします。</p>
-              <p>場に出たカードはすべて捨て札にします。</p>
+              <p>勝者は、自分のコンボエリアのカードの最大のブレイクの値だけデッキからカードを捨て札にします。</p>
 
               <HighlightBox type="tip" title="アドバンスルール">
                 <h4>コンボに敗北時の処理</h4>
-                <p>敗者は、自分の場のカードのうちスキルを持つカードをスキルエリアに移動します。</p>
-
+                <p>敗者は、自分のコンボエリアのカードのうちスキルを持つカードをスキルエリアに移動します。</p>
                 <h4>スキルの使用</h4>
                 <p>スキルエリアのカードはいつでも何枚でもスキルを発動できます。</p>
                 <p>スキルを発動したカードは捨て札になります。</p>

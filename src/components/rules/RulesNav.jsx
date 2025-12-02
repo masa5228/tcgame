@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './RulesNav.css';
 
-const RulesNav = ({ sections }) => {
+const RulesNav = ({ sections, isCollapsed, onToggle }) => {
   const [activeSection, setActiveSection] = useState('');
   const [isSticky, setIsSticky] = useState(false);
 
@@ -45,21 +45,32 @@ const RulesNav = ({ sections }) => {
   };
 
   return (
-    <nav className={`rules-nav ${isSticky ? 'sticky' : ''}`}>
+    <nav className={`rules-nav ${isSticky ? 'sticky' : ''} ${isCollapsed ? 'collapsed' : ''}`}>
       <div className="rules-nav-container">
-        <h3 className="rules-nav-title">目次</h3>
-        <ul className="rules-nav-list">
-          {sections.map((section) => (
-            <li key={section.id}>
-              <button
-                className={`rules-nav-link ${activeSection === section.id ? 'active' : ''}`}
-                onClick={() => scrollToSection(section.id)}
-              >
-                {section.title}
-              </button>
-            </li>
-          ))}
-        </ul>
+        <div className="rules-nav-header">
+          <h3 className="rules-nav-title">{isCollapsed ? '目次' : '目次'}</h3>
+          <button
+            className="rules-nav-toggle"
+            onClick={onToggle}
+            aria-label={isCollapsed ? '目次を開く' : '目次を閉じる'}
+          >
+            {isCollapsed ? '▶' : '◀'}
+          </button>
+        </div>
+        {!isCollapsed && (
+          <ul className="rules-nav-list">
+            {sections.map((section) => (
+              <li key={section.id}>
+                <button
+                  className={`rules-nav-link ${activeSection === section.id ? 'active' : ''}`}
+                  onClick={() => scrollToSection(section.id)}
+                >
+                  {section.title}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </nav>
   );

@@ -4,6 +4,15 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 1.5rem;
   transition: all 0.3s ease;
+  width: 280px;
+  max-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+}
+
+.rules-nav.collapsed {
+  width: 60px;
+  padding: 1rem;
 }
 
 .rules-nav.sticky {
@@ -13,21 +22,91 @@
 
 .rules-nav-container {
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+
+.rules-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e8ede9;
+  flex-shrink: 0;
+}
+
+.rules-nav.collapsed .rules-nav-header {
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .rules-nav-title {
   font-size: 1.3rem;
   color: #3d5a5c;
-  margin: 0 0 1rem 0;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid #e8ede9;
+  margin: 0;
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rules-nav.collapsed .rules-nav-title {
+  font-size: 0.9rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.rules-nav-toggle {
+  background: #5a7c5a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.rules-nav-toggle:hover {
+  background: #4a6b4a;
+  transform: scale(1.1);
 }
 
 .rules-nav-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  min-height: 0;
+}
+
+/* 目次リストのスクロールバー */
+.rules-nav-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.rules-nav-list::-webkit-scrollbar-track {
+  background: #f7f5f2;
+  border-radius: 3px;
+}
+
+.rules-nav-list::-webkit-scrollbar-thumb {
+  background: #9caf88;
+  border-radius: 3px;
+}
+
+.rules-nav-list::-webkit-scrollbar-thumb:hover {
+  background: #5a7c5a;
 }
 
 .rules-nav-list li {

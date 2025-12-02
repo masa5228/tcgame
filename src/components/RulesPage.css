@@ -42,14 +42,26 @@
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 3rem;
+  transition: grid-template-columns 0.3s ease;
+}
+
+.rules-content-wrapper.nav-collapsed {
+  grid-template-columns: 60px 1fr;
+  gap: 2rem;
 }
 
 .rules-sidebar {
   min-width: 280px;
+  transition: min-width 0.3s ease;
+}
+
+.rules-content-wrapper.nav-collapsed .rules-sidebar {
+  min-width: 60px;
 }
 
 .rules-content {
   min-width: 0;
+  transition: max-width 0.3s ease;
 }
 
 /* インフォカードグリッド */
