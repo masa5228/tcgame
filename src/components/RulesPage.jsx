@@ -170,7 +170,7 @@ const RulesPage = () => {
                   <li><strong>黒魔術デッキ：</strong>入門紫デッキ</li>
                   <li><strong>ネズミデッキ：</strong>入門黄デッキ</li>
                   <li><strong>家族デッキ：</strong>パワーコンボ白デッキ</li>
-                  <li><strong>犬デッキ：</strong>オールラウンド青デッキ</li>
+                  <li><strong>犬デッキ：</strong>安定青デッキ</li>
                 </ul>
               </HighlightBox>
             </RuleSection>
