@@ -98,7 +98,7 @@ const RulesPage = () => {
             </RuleSection>
 
             {/* ゲームの基本 */}
-            <RuleSection id="introduction" title="ゲームの流れ" imagePlaceholder hasImage ={true} imageUrl={"/assets/images/game_cycle.png"}>
+            <RuleSection id="introduction" title="ゲームの流れ" hasImage ={true} imageUrl={"/assets/images/game_cycle.png"}>
               <p>
                 カードを集め、デッキを構築し、コンボを駆使して戦うカードゲームです。
               </p>
@@ -115,7 +115,7 @@ const RulesPage = () => {
             </RuleSection>
 
             {/* コンポーネント */}
-            <RuleSection id="components" title="コンポーネント" imagePlaceholder hasImage ={true} imageUrl={"/assets/images/compornent.png"}>
+            <RuleSection id="components" title="コンポーネント" hasImage ={true} imageUrl={"/assets/images/compornent.png"}>
               <ul>
                 <li>キングトークン：13枚</li>
                 <li>通貨用チップ</li>
@@ -128,7 +128,7 @@ const RulesPage = () => {
             </RuleSection>
 
             {/* カードのステータス */}
-            <RuleSection id="card-status" title="カードのステータス" imagePlaceholder hasImage ={true} imageUrl={"/assets/images/card_status.png"}>
+            <RuleSection id="card-status" title="カードのステータス" hasImage ={true} imageUrl={"/assets/images/card_status.png"}>
               <p>各カードは以下の要素を持ちます。</p>
               <ul>
                 <li><strong>パワー：</strong>
@@ -153,8 +153,9 @@ const RulesPage = () => {
             </RuleSection>
 
             {/* ゲームの準備 */}
-            <RuleSection id="preparation" title="ゲームの準備" imagePlaceholder hasImage ={true} imageUrl={"/assets/images/starterdecks.png"}>
+            <RuleSection id="preparation" title="ゲームの準備" hasImage ={true} imageUrl={"/assets/images/starterdecks.png"}>
               <ol>
+                <li>スターター以外のカードをレアリティごとにまとめてサプライの山を作ります。</li>
                 <li>各プレイヤーはスターターカード6枚で構成された初期デッキを1つ選びます。</li>
                 <li>各プレイヤーはさらにノーマルカードをランダムに3枚受け取ります。</li>
                 <li>初期チップは0枚です。</li>
@@ -259,52 +260,38 @@ const RulesPage = () => {
             </RuleSection>
 
             {/* コンボ */}
-            <RuleSection id="combo" title="コンボ" hasImage imagePlaceholder>
-              <p>コンボは対戦での勝利の鍵となる重要な要素です。</p>
+            <RuleSection id="combo" title="コンボ" hasImage imageUrl="/assets/images/combo.png">
+              <p>以下のルールに従ってカードをコンボエリアに出せます。</p>
 
               <div className="combo-types">
                 <div className="combo-type-card">
-                  <h4>🔢 数字コンボ</h4>
-                  <p>直前に出したカードに記載された数字コンボと同じパワーを持つカードを続けて出せます。</p>
+                  <h4>🔢 パワーコンボ</h4>
+                  <p>直前に出したカードに記載されたパワーコンボと同じパワーを持つカードを続けて出せます。</p>
                 </div>
 
                 <div className="combo-type-card">
-                  <h4>🎨 色コンボ</h4>
+                  <h4>🎨 カラーコンボ</h4>
                   <p>直前に出したカードと同じ色で、より大きなパワーを持つカードを続けて出せます。</p>
+                  <p>2色のカードは両方の色として扱います。</p>
+                  <p>無色のカードはカラーコンボができません。</p>
                 </div>
               </div>
             </RuleSection>
 
-            {/* チップ */}
-            <RuleSection id="chips" title="チップ" imagePlaceholder>
-              <h3>チップの獲得方法</h3>
-              <p>対戦の勝敗に応じてチップを獲得できます。</p>
-
-              <h3>チップの使用用途</h3>
-              <ol>
-                <li>ショップでのカード購入</li>
-                <li>トレードの対価</li>
-              </ol>
-
-              <HighlightBox type="tip" title="戦略のヒント">
-                <p>デッキ枚数が多いほど勝利時の報酬が高くなりますが、デッキ構築の制約も厳しくなります。</p>
-                <p>バランスを考えてデッキを構築しましょう。</p>
-              </HighlightBox>
-            </RuleSection>
-
             {/* 対戦報酬 */}
-            <RuleSection id="rewards" title="対戦報酬">
+            <RuleSection id="rewards" title="対戦報酬"  >
+              <p>使用したデッキの枚数と対戦での勝敗によって獲得できるチップ量が変わります。</p>
+              <p>3人プレイ時に対戦を行わなかったプレイヤーは、敗者と同額のチップを受け取ります。</p>
               <TableSection
-                description="デッキ枚数に応じて、対戦での勝敗によって獲得できるチップが変わります。"
                 headers={rewardTableHeaders}
                 rows={rewardTableRows}
               />
             </RuleSection>
 
             {/* ショップ */}
-            <RuleSection id="shop" title="ショップ" imagePlaceholder>
+            <RuleSection id="shop" title="ショップ" >
               <p>1ラウンドにつき購入できるカードは最大3枚です。</p>
-              <p>支払うチップ数に応じてカードを1枚引きます。</p>
+              <p>どのレアリティのサプライからカードを購入するかで支払うチップが異なります。</p>
 
               <TableSection
                 headers={shopTableHeaders}
@@ -313,60 +300,28 @@ const RulesPage = () => {
 
               <HighlightBox type="info" title="キングカードについて">
                 <p>ショップで購入したカードがキングカードだった場合、キングトークンを1枚獲得します。</p>
-                <p>サプライのキングトークンが減ることでゲームは終了に向かいます。</p>
+                <p>レアリティが高いサプライほどキングトークンが出る確率が高くなっています。</p>
+                <p>サプライのキングトークンがなくなった次のラウンドはキングマッチを行います。</p>
               </HighlightBox>
             </RuleSection>
 
             {/* キングマッチ */}
-            <RuleSection id="king-match" title="キングマッチ" hasImage imagePlaceholder>
+            <RuleSection id="king-match" title="キングマッチ" >
               <p>サプライのキングトークンがすべてなくなったら、キングマッチが開始されます。</p>
+              <p>キングマッチが開催されたら、ショップからのカード購入ができなくなります。</p>
+              <p>キングマッチの対戦で使うデッキは必ず15枚以上のデッキを使用します。</p>
 
               <h3>キングマッチの流れ</h3>
               <ol>
                 <li>キングトークン保持数が少ない人から順に対戦を行います。</li>
                 <li>勝者同士が次の対戦を行います。</li>
-                <li>最後まで勝ち残ったプレイヤーがこのセッションの勝者となります。</li>
+                <li>最後まで勝ち残ったプレイヤーがこのゲームの勝者となります。</li>
               </ol>
 
               <HighlightBox type="important" title="最終決戦">
-                <p>キングマッチはゲームの集大成です。</p>
                 <p>これまで構築してきたデッキの真価が問われます。</p>
+                <p>最高のデッキで挑みましょう！</p>
               </HighlightBox>
-            </RuleSection>
-
-            {/* まとめ */}
-            <RuleSection id="summary" title="まとめ">
-              <div className="summary-cards">
-                <div className="summary-card">
-                  <h4>📚 デッキ構築</h4>
-                  <p>デッキは9枚以上。カードのパワーはデッキ枚数以下まで。</p>
-                </div>
-
-                <div className="summary-card">
-                  <h4>⚔️ 対戦</h4>
-                  <p>対戦は1対1で行い、デッキを0枚にしたら勝利。</p>
-                </div>
-
-                <div className="summary-card">
-                  <h4>🎯 判定</h4>
-                  <p>判定はコンボ数が優先、その次にパワー合計値。</p>
-                </div>
-
-                <div className="summary-card">
-                  <h4>💥 ブレイク</h4>
-                  <p>勝者はブレイクの値に応じてデッキを削り、場は全て捨て札になる。</p>
-                </div>
-
-                <div className="summary-card">
-                  <h4>💰 ショップ</h4>
-                  <p>報酬のチップでカードを購入・トレードし、デッキを強化する。</p>
-                </div>
-
-                <div className="summary-card">
-                  <h4>👑 キングマッチ</h4>
-                  <p>キングマッチに勝てばゲームに勝利する。</p>
-                </div>
-              </div>
             </RuleSection>
           </main>
         </div>
