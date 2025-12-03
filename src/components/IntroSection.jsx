@@ -35,9 +35,9 @@ const IntroSection = () => {
             <a href="#rules" className="intro-link primary">
               ルールを見る
             </a>
-            <a href="#story" className="intro-link secondary">
+            {/* <a href="#story" className="intro-link secondary">
               世界を知る
-            </a>
+            </a> */}
             <a href="#world" className="intro-link secondary">
               住人たちを知る
             </a>

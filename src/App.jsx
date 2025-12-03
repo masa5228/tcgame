@@ -41,8 +41,8 @@ function App() {
         setCurrentPage('cards');
       } else if (hash === 'rules') {
         setCurrentPage('rules');
-      // } else if (hash === 'story') {
-      //   setCurrentPage('story');
+      } else if (hash === 'story') {
+        setCurrentPage('story');
       } else {
         setCurrentPage('home');
       }
@@ -63,8 +63,8 @@ function App() {
         return <CardsPage />;
       case 'rules':
         return <RulesPage />;
-      // case 'story':
-      //   return <StoryPage />;
+      case 'story':
+        return <StoryPage />;
       case 'home':
       default:
         return (

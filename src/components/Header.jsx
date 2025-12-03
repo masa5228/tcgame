@@ -5,7 +5,7 @@ import './Header.css';
 const Header = () => {
   const menuItems = [
     { id: 'rules', label: 'Rules' },
-    { id: 'story', label: 'Story' },
+    // { id: 'story', label: 'Story' },
     { id: 'world', label: 'Cards' },
   ];
 
