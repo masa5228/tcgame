@@ -25,10 +25,8 @@ function App() {
       throw new Error("Worker送信に失敗しました");
     }
     console.log('送信されたデータ:', formData);
-    alert("送信しました！");
 
     // formData には { name: string, message: string } が含まれます
-
     // 送信処理が完了したらモーダルを閉じる
     setIsContactModalOpen(false);
   };
