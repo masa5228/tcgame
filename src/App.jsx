@@ -5,10 +5,33 @@ import IntroSection from './components/IntroSection';
 import CardsPage from './components/CardsPage';
 import RulesPage from './components/RulesPage';
 import StoryPage from './components/StoryPage';
+import ContactModal from './components/ContactModal';
 import './App.css';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const handleContactSubmit = async (formData) => {
+    const res = await fetch("https://line-worker.masa5228.workers.dev/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name:formData.name,
+        message:formData.message
+      })
+    });
+    if (!res.ok) {
+      throw new Error("Worker送信に失敗しました");
+    }
+    console.log('送信されたデータ:', formData);
+    alert("送信しました！");
+
+    // formData には { name: string, message: string } が含まれます
+
+    // 送信処理が完了したらモーダルを閉じる
+    setIsContactModalOpen(false);
+  };
 
   useEffect(() => {
     // URLハッシュに基づいてページを変更
@@ -58,8 +81,19 @@ function App() {
       <Header />
       <main>{renderContent()}</main>
       <footer className="footer">
+        <button
+          className="contact-button"
+          onClick={() => setIsContactModalOpen(true)}
+        >
+          開発者へメッセージ
+        </button>
         <p>&copy; 2025 T!C!Game (トカゲー). All rights reserved.</p>
       </footer>
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        onSubmit={handleContactSubmit}
+      />
     </div>
   );
 }

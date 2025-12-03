@@ -16,6 +16,29 @@ main {
   margin-top: 4rem;
 }
 
+.footer .contact-button {
+  background-color: #5a7c5a;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.footer .contact-button:hover {
+  background-color: #4a6c4a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(90, 124, 90, 0.4);
+}
+
+.footer .contact-button:active {
+  transform: translateY(0);
+}
+
 .footer p {
   margin: 0;
   font-size: 0.9rem;
