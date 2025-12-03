@@ -34,3 +34,8 @@ coverage/
 
 # Misc
 *.tsbuildinfo
+.vs/tcgame/v17/DocumentLayout.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vs/tcgame/FileContentIndex/f6e71fdb-4f69-4b7f-9979-5e3c3dcac418.vsidx
+.vs/tcgame/v17/.wsuo
