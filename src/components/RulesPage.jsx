@@ -12,10 +12,27 @@ const RulesPage = () => {
   const toggleNav = () => {
     setIsNavCollapsed(!isNavCollapsed);
   };
+
+  // 日本時間で2026年1月1日 00:00:00を超えているかチェック
+  const getPrintImageUrl = () => {
+    // 日本時間の現在時刻を取得
+    const now = new Date();
+    const japanTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
+
+    // 2026年1月1日 00:00:00 (JST)
+    const expirationDate = new Date('2025-12-03T15:01:00+09:00');
+
+    // 日本時間で期限を超えているかチェック
+    if (japanTime >= expirationDate) {
+      return '/assets/images/game_cycle.png';
+    }
+    return '/assets/images/card_status.png';
+  };
   const sections = [
     { id: 'basic-info', title: 'ゲームの基本情報' },
     { id: 'introduction', title: 'ゲームの流れ' },
     { id: 'components', title: 'コンポーネント' },
+    { id: 'how-to-print', title: 'カードの印刷方法' },
     { id: 'card-status', title: 'カードのステータス' },
     { id: 'preparation', title: 'ゲームの準備' },
     { id: 'round-flow', title: 'ラウンドの流れ' },
@@ -124,6 +141,27 @@ const RulesPage = () => {
                 <li>レジェンドカード：16枚</li>
               </ul>
             </RuleSection>
+
+            {/* 印刷方法 */}
+            {/* <RuleSection id="how-to-print" title="カードの印刷方法" hasImage ={true} imageUrl={getPrintImageUrl()}>
+              <h4>必要なもの</h4>
+              <ul>
+                <li><strong>印刷用QR：</strong>QRが期限切れの場合は問い合わせをください。</li>
+                <li><strong>スリーブ：</strong>66×91mm背面不透過 のものを200枚ほど</li>
+                <li><strong>TCGカード：</strong>MTG、デュエマ、ポケカ のカードを200枚ほど</li>
+                <li><strong>カッターナイフ：</strong>印刷した紙を切ります。</li>
+              </ul>
+              <h4>印刷手順</h4>
+              <ol>
+                <li>ファミマのプリンターにQRを読み取らせる</li>
+                <li>普通紙の文書プリントを選択</li>
+                <li>用紙サイズA3を選択</li>
+                <li>拡大縮小しない（用紙サイズに合わせない）</li>
+                <li>すべてのデータを印刷</li>
+                <li>カッターですべてのカードを丁寧に切る</li>
+                <li>スリーブにTCGカードと一緒に詰める</li>
+              </ol>
+            </RuleSection> */}
 
             {/* カードのステータス */}
             <RuleSection id="card-status" title="カードのステータス" hasImage ={true} imageUrl={"/assets/images/card_status.png"}>
