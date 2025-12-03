@@ -185,6 +185,30 @@
   text-align: center;
 }
 
+/* フレーバーテキスト */
+.flavor-text-section {
+  border-top: 2px solid #e8ede9;
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+}
+
+.flavor-text-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #3d5a5c;
+}
+
+.flavor-text {
+  background-color: #f7f5f2;
+  padding: 1.25rem;
+  border-radius: 8px;
+  color: #5e6c69;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  font-style: italic;
+  border-left: 4px solid #9caf88;
+}
+
 @media (max-width: 768px) {
   .modal-content {
     width: 95%;

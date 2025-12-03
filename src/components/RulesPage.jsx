@@ -147,8 +147,8 @@ const RulesPage = () => {
               <h4>必要なもの</h4>
               <ul>
                 <li><strong>印刷用QR：</strong>QRが期限切れの場合は問い合わせをください。</li>
-                <li><strong>スリーブ：</strong>66×91mm背面不透過 のものを200枚ほど</li>
-                <li><strong>TCGカード：</strong>MTG、デュエマ、ポケカ のカードを200枚ほど</li>
+                <li><strong>スリーブ：</strong>66×91mm背面不透過 のものを200枚</li>
+                <li><strong>TCGカード：</strong>MTG、デュエマ、ポケカ のカードを200枚</li>
                 <li><strong>カッターナイフ：</strong>印刷した紙を切ります。</li>
               </ul>
               <h4>印刷手順</h4>
@@ -157,9 +157,11 @@ const RulesPage = () => {
                 <li>普通紙の文書プリントを選択</li>
                 <li>用紙サイズA3を選択</li>
                 <li>拡大縮小しない（用紙サイズに合わせない）</li>
-                <li>すべてのデータを印刷</li>
+                <li>印刷を開始する（A3普通紙＝80円）</li>
                 <li>カッターですべてのカードを丁寧に切る</li>
                 <li>スリーブにTCGカードと一緒に詰める</li>
+                <li>遊ぶ</li>
+                <li>開発者にメッセージを送る（嬉しい）</li>
               </ol>
             </RuleSection> */}
 

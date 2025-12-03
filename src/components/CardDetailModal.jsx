@@ -1,5 +1,6 @@
 import React from 'react';
 import { getCardImagePath } from '../utils/csvParser';
+import flavorTexts from '../data/flavorTexts.json';
 import './CardDetailModal.css';
 
 const CardDetailModal = ({ card, onClose }) => {
@@ -10,6 +11,13 @@ const CardDetailModal = ({ card, onClose }) => {
       onClose();
     }
   };
+
+  // スキルがあるかチェック
+  const hasSkills = card.TEMPO === '1' || card.CHARGE === '1' || card.MACHO === '1';
+
+  // フレーバーテキストがあるかチェック
+  const flavorText = flavorTexts[card.NAME];
+  const hasFlavorText = flavorText && flavorText.trim() !== '';
 
   return (
     <div className="modal-backdrop" onClick={handleBackdropClick}>
@@ -55,32 +63,42 @@ const CardDetailModal = ({ card, onClose }) => {
                 </div>
               )}
             </div>
-            <div className="card-stats">
-              <h3>スキル</h3>
-              <div className="skills-list">
-                {card.TEMPO === '1' && (
-                  <div className="skill-item">
-                    <div className="skill-name">Tempo</div>
-                    <div className="skill-description">手札を1枚山札の一番下に置き、カードを一枚引く</div>
-                  </div>
-                )}
-                {card.CHARGE === '1' && (
-                  <div className="skill-item">
-                    <div className="skill-name">Charge</div>
-                    <div className="skill-description">捨て札のカードを1枚手札に加える</div>
-                  </div>
-                )}
-                {card.MACHO === '1' && (
-                  <div className="skill-item">
-                    <div className="skill-name">Macho</div>
-                    <div className="skill-description">このターンのパワー合計値＋３</div>
-                  </div>
-                )}
-                {!card.TEMPO && !card.CHARGE && !card.MACHO && (
-                  <div className="no-skill">スキルなし</div>
-                )}
+
+            {/* スキル - スキルがある場合のみ表示 */}
+            {hasSkills && (
+              <div className="card-stats">
+                <h3>スキル</h3>
+                <div className="skills-list">
+                  {card.TEMPO === '1' && (
+                    <div className="skill-item">
+                      <div className="skill-name">Tempo</div>
+                      <div className="skill-description">手札を1枚山札の一番下に置き、カードを一枚引く</div>
+                    </div>
+                  )}
+                  {card.CHARGE === '1' && (
+                    <div className="skill-item">
+                      <div className="skill-name">Charge</div>
+                      <div className="skill-description">捨て札のカードを1枚手札に加える</div>
+                    </div>
+                  )}
+                  {card.MACHO === '1' && (
+                    <div className="skill-item">
+                      <div className="skill-name">Macho</div>
+                      <div className="skill-description">このターンのパワー合計値＋３</div>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
+
+            {/* フレーバーテキスト - テキストがある場合のみ表示 */}
+            {hasFlavorText && (
+              <div className="flavor-text-section">
+                <div className="flavor-text">
+                  {flavorText}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
