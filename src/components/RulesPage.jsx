@@ -20,13 +20,13 @@ const RulesPage = () => {
     const japanTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
 
     // 2026年1月1日 00:00:00 (JST)
-    const expirationDate = new Date('2025-12-03T15:01:00+09:00');
+    const expirationDate = new Date('2025-12-12T15:01:00+09:00');
 
     // 日本時間で期限を超えているかチェック
     if (japanTime >= expirationDate) {
-      return '/assets/images/game_cycle.png';
+      return '/assets/images/expireQR.jpg';
     }
-    return '/assets/images/card_status.png';
+    return '/assets/images/printQR.jpg';
   };
   const sections = [
     { id: 'basic-info', title: 'ゲームの基本情報' },
@@ -143,7 +143,7 @@ const RulesPage = () => {
             </RuleSection>
 
             {/* 印刷方法 */}
-            {/* <RuleSection id="how-to-print" title="カードの印刷方法" hasImage ={true} imageUrl={getPrintImageUrl()}>
+            <RuleSection id="how-to-print" title="カードの印刷方法" hasImage ={true} imageUrl={getPrintImageUrl()}>
               <h4>必要なもの</h4>
               <ul>
                 <li><strong>印刷用QR：</strong>QRが期限切れの場合は問い合わせをください。</li>
@@ -163,7 +163,7 @@ const RulesPage = () => {
                 <li>遊ぶ</li>
                 <li>開発者にメッセージを送る（嬉しい）</li>
               </ol>
-            </RuleSection> */}
+            </RuleSection>
 
             {/* カードのステータス */}
             <RuleSection id="card-status" title="カードのステータス" hasImage ={true} imageUrl={"/assets/images/card_status.png"}>
