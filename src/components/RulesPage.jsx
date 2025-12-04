@@ -20,7 +20,7 @@ const RulesPage = () => {
     const japanTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
 
     // 2026年1月1日 00:00:00 (JST)
-    const expirationDate = new Date('2025-12-12T15:01:00+09:00');
+    const expirationDate = new Date('2025-12-12T15:00:00+09:00');
 
     // 日本時間で期限を超えているかチェック
     if (japanTime >= expirationDate) {
