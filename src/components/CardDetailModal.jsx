@@ -31,6 +31,16 @@ const CardDetailModal = ({ card, onClose }) => {
           </div>
           <div className="modal-details">
             <h2 className="card-detail-name">{card.NAME}</h2>
+
+            {/* フレーバーテキスト - テキストがある場合のみ表示 */}
+            {hasFlavorText && (
+              <div className="flavor-text-section flavor-text-top">
+                <div className="flavor-text">
+                  {flavorText}
+                </div>
+              </div>
+            )}
+
             <div className="card-detail-info">
               <div className="info-item">
                 <span className="info-label">レアリティ:</span>
@@ -87,15 +97,6 @@ const CardDetailModal = ({ card, onClose }) => {
                       <div className="skill-description">このターンのパワー合計値＋３</div>
                     </div>
                   )}
-                </div>
-              </div>
-            )}
-
-            {/* フレーバーテキスト - テキストがある場合のみ表示 */}
-            {hasFlavorText && (
-              <div className="flavor-text-section">
-                <div className="flavor-text">
-                  {flavorText}
                 </div>
               </div>
             )}

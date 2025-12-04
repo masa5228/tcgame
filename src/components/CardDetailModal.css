@@ -71,21 +71,21 @@
 }
 
 .modal-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
+  gap: 2rem;
 }
 
 .modal-image {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .modal-image img {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -192,6 +192,14 @@
   margin-top: 1rem;
 }
 
+/* カード名直下のフレーバーテキスト */
+.flavor-text-section.flavor-text-top {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
 .flavor-text-section h3 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
@@ -216,7 +224,6 @@
   }
 
   .modal-body {
-    grid-template-columns: 1fr;
     padding: 1.5rem;
     gap: 1.5rem;
   }
@@ -232,7 +239,7 @@
   }
 
   .modal-image img {
-    max-width: 300px;
+    max-width: 400px;
   }
 }
 
