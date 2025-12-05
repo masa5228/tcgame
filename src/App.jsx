@@ -5,6 +5,7 @@ import IntroSection from './components/IntroSection';
 import CardsPage from './components/CardsPage';
 import RulesPage from './components/RulesPage';
 import StoryPage from './components/StoryPage';
+import HistoryPage from './components/HistoryPage';
 import ContactModal from './components/ContactModal';
 import './App.css';
 
@@ -41,6 +42,8 @@ function App() {
         setCurrentPage('rules');
       } else if (hash === 'story') {
         setCurrentPage('story');
+      } else if (hash.startsWith('history/')) {
+        setCurrentPage('history');
       } else {
         setCurrentPage('home');
       }
@@ -63,6 +66,8 @@ function App() {
         return <RulesPage />;
       case 'story':
         return <StoryPage />;
+      case 'history':
+        return <HistoryPage />;
       case 'home':
       default:
         return (

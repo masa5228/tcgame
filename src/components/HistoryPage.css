@@ -1,0 +1,111 @@
+.history-page {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-family: serif;
+}
+
+.history-container {
+  max-width: 700px;
+  width: 100%;
+  padding: 3rem;
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.fragment-header {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.fragment-year {
+  color: #888;
+  font-size: 1rem;
+  margin: 0;
+  letter-spacing: 0.1em;
+}
+
+.fragment-divider {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 1.5rem 0;
+}
+
+.fragment-title {
+  font-size: 1.8rem;
+  margin: 1.5rem 0;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.fragment-content {
+  margin: 2rem 0;
+  line-height: 1.9;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.fragment-content p {
+  margin: 0.8rem 0;
+}
+
+.fragment-content p:empty {
+  margin: 1.5rem 0;
+}
+
+.fragment-footer {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* 断片が見つからない場合 */
+.fragment-not-found {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.fragment-not-found h2 {
+  font-size: 3rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.fragment-not-found p {
+  color: #888;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+.fragment-not-found .hint {
+  font-style: italic;
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 2rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .history-page {
+    padding: 1rem;
+  }
+
+  .history-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .fragment-title {
+    font-size: 1.4rem;
+  }
+
+  .fragment-content {
+    font-size: 0.95rem;
+  }
+}

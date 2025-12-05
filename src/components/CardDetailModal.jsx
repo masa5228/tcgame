@@ -35,9 +35,10 @@ const CardDetailModal = ({ card, onClose }) => {
             {/* フレーバーテキスト - テキストがある場合のみ表示 */}
             {hasFlavorText && (
               <div className="flavor-text-section flavor-text-top">
-                <div className="flavor-text">
-                  {flavorText}
-                </div>
+                <div
+                  className="flavor-text"
+                  dangerouslySetInnerHTML={{ __html: flavorText }}
+                />
               </div>
             )}
 

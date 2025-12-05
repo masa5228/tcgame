@@ -217,6 +217,13 @@
   border-left: 4px solid #9caf88;
 }
 
+/* 隠しリンクのスタイル */
+.flavor-text a.hidden-link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
 @media (max-width: 768px) {
   .modal-content {
     width: 95%;
